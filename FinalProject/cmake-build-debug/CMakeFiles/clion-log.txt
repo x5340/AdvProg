@@ -1,0 +1,7 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Bryan/CLionProjects/FinalProject
+-- Could NOT find Vulkan (missing: VULKAN_LIBRARY VULKAN_INCLUDE_DIR) 
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using Cocoa for window creation
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/Bryan/CLionProjects/FinalProject/cmake-build-debug
