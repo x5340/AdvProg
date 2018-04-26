@@ -9,7 +9,9 @@ Servo myservo(p21);
 
 
 int main() {
-   if (!tof.init()){
+    
+    myservo.calibrate(0.0015, 90.0);
+    if (!tof.init()){
         pc.printf("Failed to boot VL53L0X");
         return 1;
     }
@@ -19,16 +21,18 @@ int main() {
         for (int i = 0; i < 100; i ++){
             myservo = i/100.0;
             distance = tof.readRangeContinuousMillimeters();
-            pc.printf("Distance: %i\n\r", distance);
-            wait(0.01);
+            pc.printf("%i,%f\n\r", distance, i/100.0);
+            wait(0.1);
         }
         wait(0.2);
         for (int j = 100; j > 0; j--){
             myservo = j/100.0;
             distance = tof.readRangeContinuousMillimeters();
-            pc.printf("Distance: %i\n\r", distance);
-            wait(0.01);
+            pc.printf("%i, %f\n\r", distance, j/100.0);
+            wait(0.1);
         }
+        
         wait(0.1);
-   }
+    }
 }
+
